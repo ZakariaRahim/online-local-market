@@ -1,0 +1,32 @@
+th{
+    color:#ffff;
+}
+
+h2{
+    margin-top:3%;
+}
+.table-bordered{
+    background-color:#a89e32;
+}
+body{
+    background-color: #edebd5;
+}
+.pro{
+    margin-left:90%;
+     broder:5% solid #f3f3;
+}
+#databasevalues{
+    border:1px solid #f3f3;
+    background-color:#f1f1f1;
+     border-radius:4px;
+}
+/* .buyform{
+    background-color: cornflowerblue;
+   min-height: 40%;
+    width:30%;
+   padding-top: 3%;
+    margin-left:30%;
+} */
+.textwidth{
+    width:30%; 
+}

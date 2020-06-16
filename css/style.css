@@ -1,0 +1,389 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background-color: #f8f8f8;
+}
+.index-container{
+	width: 100%;
+	min-height: 120vh;
+	margin-bottom: 60px;
+}
+.top_head{
+	background-color: #fff;
+	width: 100%;
+	height: 70px;
+	position: sticky;
+	border-bottom: 2px solid #eee;
+	z-index: 333;
+}
+.logo{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.logo a{
+	text-transform: uppercase;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	color: #da4004;
+	width: 60px;
+	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .5);
+	padding: 5px 10px;
+	border: 2px solid #da4004;
+	font-size: 1.2em;
+}
+.list{
+	float: left;
+}
+.list ul{
+	margin-left: 20px;
+}
+.list ul li{
+	list-style: none;
+	display: inline-block;
+}
+.list ul li a{
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 1.16em;
+	text-transform: capitalize;
+	color: #000;
+	font-weight: normal;
+}
+.list ul li a:hover{
+	color: #da4004;
+}
+.list .fa{
+	font-size: 1.1em;
+	color: #f76e13;
+	margin-right: 5px;
+}
+.slider{
+	width: 100%;
+	min-height: 80vh;
+	margin: 20px 0px;
+}
+.carousel{
+	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, .5);
+}
+.slide_one{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),url(../img/veg1.jpg)center/cover no-repeat;
+}
+.slide_two{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),url(../img/legume.jpg)center/cover no-repeat;
+}
+.slide_three{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),url(../img/rice1.jpg)center/cover no-repeat;
+}
+.slide_four{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),url(../img/potato2.jpg)center/cover no-repeat;
+}
+.feature{
+	margin-top: 120px;
+	margin-bottom: 100px;
+}
+.feature h2{
+	margin-left: 100px;
+	color: #f76e13;
+	font-weight: bold;
+	text-transform: capitalize;
+	border-left: 20px solid #f76e13;
+	padding-left: 50px;
+	font-style: italic;
+}
+.feature img{
+	width: 90%;
+	height: 300px;
+    padding: 20px 0;
+    transition: 1s;
+	cursor: pointer;
+	margin-left: 20px;
+}
+.feature img:hover{
+    transform: scale(1.1);
+}
+.feature h6{
+	text-align: center;
+	color: #f76e13;
+	text-transform: uppercase;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.products{
+	width: 90%;
+	min-height: 50vh;
+	margin: auto;
+	margin-top: 30vh;
+	margin-bottom: 20vh;
+	margin-left: 10%;
+}
+
+.veg{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .5);
+	animation: animate 13s ease-in-out infinite;
+}
+@keyframes animate{
+	0%,100%{
+		background: url(../img/veg1.jpg)center/cover no-repeat;
+	}
+	20%{
+		background: url(../img/veg2.jpg)center/cover no-repeat;;
+	}
+	75%{
+		background: url(../img/veg3.jpg)center/cover no-repeat;;
+	}
+
+}
+.root{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .5);
+	animation: animate1 14s ease-in-out infinite;
+}
+@keyframes animate1{
+	0%,100%{
+		background: url(../img/potato1.jpg)center/cover no-repeat;
+	}
+	20%{
+		background: url(../img/cassava3.jpg)center/cover no-repeat;;
+	}
+	75%{
+		background: url(../img/cocoyam2.jpg)center/cover no-repeat;;
+	}
+
+}
+.cereal{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .5);
+	animation: animate2 15s ease-in-out infinite;
+}
+@keyframes animate2{
+	0%,100%{
+		background: url(../img/maize2.jpg)center/cover no-repeat;
+	}
+	20%{
+		background: url(../img/rice2.jpg)center/cover no-repeat;;
+	}
+	75%{
+		background: url(../img/wheat1.jpg)center/cover no-repeat;;
+	}
+
+}
+.legume{
+	margin-top: 20px !important;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .5);
+	animation: animate3 16s ease-in-out infinite;
+}
+@keyframes animate3{
+	0%,100%{
+		background: url(../img/groundnut2.jpg)center/cover no-repeat;
+	}
+	20%{
+		background: url(../img/peas1.jpg)center/cover no-repeat;;
+	}
+	75%{
+		background: url(../img/beans3.jpg)center/cover no-repeat;;
+	}
+
+}
+.products a{
+	text-decoration: none;
+	outline: none;
+}
+.name{
+	color: #f76e13;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-left: -140px;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+}
+.name:hover{
+	color: #da4004;
+}
+.products h2{
+	margin-left: 80px;
+	color: #f76e13;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: italic;
+	border-left: 20px solid #f76e13;
+	padding-left: 50px;
+	margin-bottom: 15vh;
+}
+
+
+.goods{
+	width: 80%;
+	min-height: 70vh;
+	margin: 50px auto 30px auto;
+	background-color: #fff;
+}
+.goods a{
+	text-decoration: none;
+	color: #f76e13;
+	text-transform: capitalize;
+	font-style: italic;
+	font-weight: bold;
+}
+.goods a:hover{
+	color: #da4004;
+}
+.p_container{
+	width: 80%;
+	min-height: 180vh;
+	margin: 20px auto;
+	background-color: #fff;
+}
+.breadcrumb a{
+	text-decoration: none;
+	font-style: italic;
+	font-weight: bold;
+	color: #f76e13;
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+.breadcrumb a:hover{
+	color: #da4004;
+}
+#nameform{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+#nameform a{
+	color: #f76e13;
+	font-size: 1em;
+}
+#nameform a:hover{
+	color: #da4004;
+}
+.box{
+
+	background-color: #fff;
+}
+.col-md-4{
+	width: 300px;
+	height: 400px;
+	float: left;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.p_form img{
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+}
+.p_info{
+	margin-top: 20px;
+}
+.p_info h3{
+	background: none;
+	text-align: center;
+	color: #f76e13;
+	text-transform: capitalize;
+}
+.p_info h5 input{
+	outline: none;
+	border: none;
+	background: none;
+	text-align: center;
+	width: 100px;
+	color: #f76e13;
+}
+.p_info h5{
+	font-size: 1em;
+	margin-left: 20px;
+	font-weight: 600;
+}
+.p_info h5 span{
+	color: #f76e13;
+	text-transform: uppercase;
+	margin-right: -25px;
+}
+.qty{
+	width: 50px;
+	text-align: center;
+	font-weight: bold;
+	outline: none;
+	margin-bottom: 10px;
+}
+.p_info input[type="submit"]{
+	width: 150px;
+	height: 40px;
+	outline: none;
+	border: none;
+	background-color: #f76e13;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.p_info input[type="submit"]:hover{
+	background-color: #da4004;
+	transition: .4s;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+
+
+
+/* .p_form img{
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+	margin-top: -60px;
+	width: 100%;
+	height: 60px;
+	background-color: #140d0a;
+	text-align: center;
+	color: #f76e13;
+	text-transform: capitalize;
+	padding: 10px;
+	padding-top: 18px;
+	font-size: 1.1em;
+}
+footer span{
+	text-transform: uppercase;
+	font-weight: bold;
+}

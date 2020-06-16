@@ -1,6 +1,9 @@
 <?php
+
 include 'connect.php';
 include 'headerfiles.php';
+$_SESSION["cereal"]="cereals";
+
 
 if (isset($_POST['add_to_cart'])) {
   if (isset($_SESSION["cart"])) {
@@ -20,7 +23,7 @@ if (isset($_POST['add_to_cart'])) {
     }
     else{
           echo '<script>alert("Item has been added already")</script>';        
-          echo '<script>window.location="index.php"</script>';
+          echo '<script>window.location="cereals.php"</script>';
     }
     
   }
@@ -42,7 +45,7 @@ if (isset($_GET["action"])) {
       if ($values["item_id"]== $_GET["id"]) {
         unset($_SESSION["cart"][$keys]);
         echo '<script>alert("item Removed")</script>';
-        echo '<script>window.location="index.php" </script>';
+        echo '<script>window.location="cereals.php" </script>';
       }
     }
   }
@@ -88,7 +91,7 @@ $cart_count = count(array_keys($_SESSION["cart"]));
          
       <div class="col-md-4" style="float:right;margin-top:5px;">
      
-          <form  method="post" action="index.php?action=add & id=<?php echo $row["id"];?>" >
+          <form  method="post" action="cereals.php?action=add & id=<?php echo $row["id"];?>" >
         <div id="databasevalues" clas="col-xs-7 col-sm-6 col-lg-8">
         <img src="<?php echo $row["image"];?>" class="image-fluid"/>
         <h4 class="text-info"> <?php echo $row["name"];?></h4>

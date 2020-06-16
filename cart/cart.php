@@ -1,8 +1,10 @@
 <?php 
-session_start();
+include 'connect.php';
 include 'headerfiles.php';
 //  we will be using the customer login id to get the session name of the customerid 
  $_SESSION["customerid"]="rahim";
+//  $cereals=$_SESSION['cereal'];
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +48,7 @@ include 'headerfiles.php';
   
        <!-- we will be using user session id in order to get user name during login -->
        <td><?php echo $_SESSION['customerid']?></td>
-       <td> <a href="index.php?action=delete&id=<?php echo  $values["item_id"];?>"><span class="text-danger"><button type="submit" class="btn btn-danger">Remove</button><i class="fas fa-trash-alt"></i> </span></a></td>
+       <td> <a href="cereals.php?action=delete&id=<?php echo  $values["item_id"];?>"><span class="text-danger"><button type="submit" class="btn btn-danger">Remove</button><i class="fas fa-trash-alt"></i> </span></a></td>
         
         <td ><a href="insertdata.php?action=insert&id=<?php echo $values['item_id']; ?>"><button type="submit" class="btn btn-success">Order Now</button></a> </td>
       </tr>
@@ -65,8 +67,8 @@ include 'headerfiles.php';
    ?>
   
   </table>
- <a href="index.php">
-
+  
+ <a href="cereals.php">
   <input type="submit" value="Back To Cart" class="btn btn-secondary"></a>
 
  

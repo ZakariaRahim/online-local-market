@@ -1,6 +1,7 @@
 <?php
 include 'connect.php';
 include 'headerfiles.php';
+$_SESSION["legumes"]="legumes";
 
 if (isset($_POST['add_to_cart'])) {
   if (isset($_SESSION["cart"])) {

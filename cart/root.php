@@ -42,7 +42,7 @@ if (isset($_GET["action"])) {
       if ($values["item_id"]== $_GET["id"]) {
         unset($_SESSION["cart"][$keys]);
         echo '<script>alert("item Removed")</script>';
-        echo '<script>window.location="roots.php" </script>';
+        echo '<script>window.location="root.php" </script>';
       }
     }
   }

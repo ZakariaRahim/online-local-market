@@ -17,6 +17,7 @@ if (isset($_GET["action"])) {
           $slq1=" INSERT INTO `orders_t`(`customerId`,`name`, `quantity`, `unitPrice`, `totalPrice`) VALUES('".$customerid."','".$name."','".$qty."','".$price."','".$totalprice."') ";
        $data1=mysqli_query($connect,$slq1);
           echo '<script>alert("Product Ordered Successfully")</script>';
+            
           echo '<script>window.location="cart.php" </script>';
         }
       }

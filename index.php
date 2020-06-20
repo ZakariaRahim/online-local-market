@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +44,7 @@
                                     shopping cart
                                 </a>
                             </li>
+                            <?php if(!isset($_SESSION['user'])){ ?>
                             <li>
                                 <a href="cart/login.php">
                                     <i class="fa fa-user"></i>
@@ -54,6 +57,14 @@
                                     signup
                                 </a>
                             </li>
+                            <?php } else{ ?>
+                                <li>
+                                <a href="cart/logout.php">
+                                    <i class="fa fa-users"></i>
+                                    logout
+                                </a>
+                            </li>
+                            <?php } ?>
                         </ul>
                     </nav>
                 </div>

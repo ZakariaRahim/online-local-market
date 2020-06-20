@@ -1,75 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+include_once 'init.php';
+$title = "ADD PRODUCT";
+include_once 'admin_header.php';
+$errors = [];
 
-    <!-- css files -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+if(!isset($_SESSION['user']))
+    header("location: login.php");
 
 
-    <title>ZIGRI | ADD PRODUCT</title>
-</head>
-<body>
-    <div class="dash_container">
-        <div class="dash_top">
-            <h4>dashboard</h4>
+if(isset($_POST['submit']))
+{
+    // get form data into variables
 
-            <div class="user">
-                <h6>
-                    hi <?php echo "admin"; ?>
-                </h6>
-            </div>
-        </div>
+    $name = htmlspecialchars(trim($_POST['name']));
+    $quantity = htmlspecialchars(trim($_POST['qty']));
+    $price = htmlspecialchars(trim($_POST['price']));
+    $type = htmlspecialchars(trim($_POST['type']));
 
-        <!-- right side bar -->
-        <div class="dash_side">
-            <h4>admin dashboard</h4>
-            <nav class="side_bar">
-                <ul>
-                    <li>
-                        <a href="dash.php">home</a>
-                    </li>
-                    <li>
-                        <a href="add_product.php" class="current">add product</a>
-                    </li>
-                    <li>
-                        <a href="update_product.php">update product</a>
-                    </li>
-                    <li>
-                        <a href="customer.php">customer record</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    // get the file to be uploaded
+
+    $fileName = $_FILES['file']['name'];
+    $fileSize = $_FILES['file']['size'];
+    $error = $_FILES['file']['error'];
+    $tmpName = $_FILES['file']['tmp_name'];
+
+    $fileSplit = explode('.', $fileName );
+    $fileExt =  end($fileSplit);
+
+    $allowedExt = ['jpg', 'png', 'jpeg'];
+
+    // var_dump($fileSplit);
+    // die();
+
+
+    if($error == '')
+    {
+        if(in_array($fileExt, $allowedExt))
+        {
+            if(move_uploaded_file($tmpName, 'uploaded_images/'. $fileName))
+            {
+                $sql = "INSERT INTO products (name, type, quantity, price, image)
+                             VALUES('$name', '$type', '$quantity', '$price', '$fileName' )";
+
+                mysqli_query($connect, $sql);
+            }
+            else{
+                array_push($errors, 'File not uploaded');
+            }
+
+
+        }else{
+            array_push($errors, "File type not supported.");
+            // die($fileExt);
+        }
+        
+    }else{
+        array_push($errors, 'An error occured,try again');
+    }
+
+
+
+}
+
+?>
+
+
 
         <!-- main content container -->
         <div class="dash_content">
             
-            <form action="" method="post" class="addForm">
+            <form action="add_product.php" method="post" class="addForm" enctype = 'multipart/form-data'>
+            <?php if(!empty($errors)){ ?>
+            <div>
+            <ul><!-- form errors goes in here, add som styles  -->
+            <?php
+            foreach ($errors as $error) { ?>
+               
+                <li><?= $error ?></li>
+                
+
+                
+            <?php } ?>
+            </ul>
+        </div>
+       <?php  } ?>
                 <table>
                 <tr>
                     <th>upload picture</th>
-                    <td><input type="file"></td>
+                    <td><input type="file" name="file" required value = "<?= $_FILES['file']['name'] ?? '' ?>"></td>
                 </tr>
                 <tr>
                     <th>product name</th>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="name" required value = "<?= $_POST['name'] ?? '' ?>"></td>
                 </tr>
                 <tr>
                     <th>product quantity</th>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="qty" required value = "<?= $_POST['qty'] ?? '' ?>"></td>
                 </tr>
                 <tr>
                     <th>product price</th>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="price" required value = "<?= $_POST['price'] ?? '' ?>"></td>
+                </tr>
+
+                 <tr>
+                    <th>product type</th>
+                    <td>
+                        <select name="type" id="type" required>
+                            <option value="cereal" selected>Cereals</option>
+                        </select>
+                    </td>
                 </tr>
                 
                 </table>
                 <div>
-                    <input type="submit" value="add product">
+                    <input type="submit" value="add product" name="submit">
                 </div>
             </form>
 
@@ -78,15 +122,6 @@
     </div>
 
 
+<?php 
 
-
-
-
-    <!-- js files -->
-    <script src="../js/jquery-3.4.1.slim.min.js" charset="utf-8"></script>
-    <script src="../js/popper.min.js" charset="utf-8"></script>
-    <script src="../js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="../js/jquery-3.4.1.min.js" charset="utf-8"></script>
-    <script src="../js/main.js" charset="utf-8"></script>
-</body>
-</html>
+include_once "admin_footer.php";

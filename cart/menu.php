@@ -14,7 +14,7 @@
                 <!-- site logo -->
                 <div class="col-md-6">
                     <div class="logo">
-                        <a href="index.php">zigri</a>
+                        <a href="../index.php">zigri</a>
                     </div>
                 </div>
 
@@ -23,25 +23,25 @@
                     <nav class="list">
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="../index.php">
                                     <i class="fa fa-home"></i>
                                     home
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="cart.php">
                                     <i class="fa fa-shopping-cart"></i>
-                                    add cart
+                                    shopping cart
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="login.php">
                                     <i class="fa fa-user"></i>
                                     login
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="signup.php">
                                     <i class="fa fa-users"></i>
                                     signup
                                 </a>

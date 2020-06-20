@@ -43,13 +43,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="cart/login.php">
                                     <i class="fa fa-user"></i>
                                     login
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="cart/signup.php">
                                     <i class="fa fa-users"></i>
                                     signup
                                 </a>
@@ -101,7 +101,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <a href="cart/cereal.php">
+                    <a href="cart/cereals.php">
                         <img src="img/rice2.jpg" alt="">
                     </a>
                     <h6>rice</h6>
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a href="cart/cereal.php">
+                    <a href="cart/cereals.php">
                         <div class="cereal ml-2"></div>
                         <div class="name">
                             cereals
@@ -161,7 +161,7 @@
                 </div>
 
                 <div class="col-md-4 ">
-                    <a href="cart/legumes.php">
+                    <a href="cart/legumescart.php">
                         <div class="legume ml-2"></div>
                         <div class="name">
                             legumes

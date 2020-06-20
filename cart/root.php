@@ -61,13 +61,13 @@ if (isset($_GET["action"])) {
       <link rel="stylesheet" href="../fontawesome/css/all.min.css">
       <link rel="stylesheet" href="../css/style.css">
 
-      <title>ZIGRI | CEREALS </title>
+      <title>ZIGRI | ROOT TUBER </title>
   </head>
   <body>
     <div class="index_container">
 
         <!-- menus  -->
-        <?php include_once '../menu.php' ; ?>
+        <?php include_once 'menu.php' ; ?>
 
       <div class="p_container">
 
@@ -108,7 +108,7 @@ if (isset($_GET["action"])) {
 
             ?>
                   <div class="box">
-                        <form action="cereal.php?action=add&id=<?php echo $row['id']; ?>" method="post" class="p_form">
+                        <form action="root.php?action=add&id=<?php echo $row['id']; ?>" method="post" class="p_form">
 
                           <div class="col-md-4">
 

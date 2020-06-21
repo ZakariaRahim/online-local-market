@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2020 at 03:21 AM
+-- Generation Time: Jun 21, 2020 at 05:38 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -131,6 +131,29 @@ INSERT INTO `orders_t` (`id`, `customerId`, `name`, `quantity`, `unitPrice`, `to
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `type`, `quantity`, `price`, `image`) VALUES
+(2, 'q', 'cereal', '10', '20.00', 'Google-Street-View-moves-into-shops-1-800x485.jpg'),
+(3, 'hh', 'cereal', 'lkk', '90.00', 'Google-Street-View-moves-into-shops-1-800x485.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roots_t`
 --
 
@@ -152,6 +175,30 @@ INSERT INTO `roots_t` (`id`, `name`, `quantity`, `price`, `image`) VALUES
 (3, 'Radhies', '25', '120.00', 'gaf\\Roots\\radishes1.jpg'),
 (4, 'Sweet Potato', '10', '50.00', 'gaf\\Roots\\sweetpotato1.jpg'),
 (5, 'Yam', '30', '100.00', 'gaf\\Roots\\yam1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(255) NOT NULL,
+  `fullName` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `telephone` varchar(100) NOT NULL,
+  `gps` varchar(200) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `fullName`, `region`, `telephone`, `gps`, `address`, `email`, `password`) VALUES
+('username', 'fullname', 'region', '+2229900020', 'somewhere', 'address', 'somebody@nobody.com', '$2y$10$cicmFt6Ug71g3ybD.Alv5OcoDuhE3fFkWBH/Q6LazQteud4eU4rC.');
 
 -- --------------------------------------------------------
 
@@ -207,10 +254,22 @@ ALTER TABLE `orders_t`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roots_t`
 --
 ALTER TABLE `roots_t`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `vegetables_t`
@@ -226,7 +285,7 @@ ALTER TABLE `vegetables_t`
 -- AUTO_INCREMENT for table `cereals_t`
 --
 ALTER TABLE `cereals_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `general_orders_t`
@@ -244,6 +303,12 @@ ALTER TABLE `legumes_t`
 -- AUTO_INCREMENT for table `orders_t`
 --
 ALTER TABLE `orders_t`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --

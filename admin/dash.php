@@ -35,6 +35,7 @@ $legume = 0;
 if($query)
     $legume= mysqli_fetch_assoc($query)['num'];
 
+    
 
 // find tuber count
 
@@ -59,7 +60,11 @@ if($query)
     $customer= mysqli_fetch_assoc($query)['num'];
 
 
-
+$sql_o="SELECT COUNT(customerId) num FROM orders_t";
+$query = mysqli_query($connect, $sql_o);
+  $orders=0;
+if($query)
+     $orders=mysqli_fetch_assoc($query)['num'];
 
 
 
@@ -110,6 +115,15 @@ if($query)
                 
                 <div class="d_foot">
                     <h5 class="f-veg">customers</h5>
+                </div>
+            </div>
+
+            <div class="d_box col-md-4 mr-5">
+            <i class="fas fa-shopping-cart fa-4x" style="padding-top:10%;"></i>
+                <h4 id="orders"><?= $orders ?></h4>
+                
+                <div class="d_foot">
+                    <h5 class="f-veg">Orders</h5>
                 </div>
             </div>
         

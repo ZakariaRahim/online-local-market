@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2020 at 05:38 PM
+-- Generation Time: Jun 22, 2020 at 03:03 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -25,28 +25,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cereals_t`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE `cereals_t` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `quantity` varchar(30) DEFAULT NULL,
-  `price` decimal(18,2) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
+CREATE TABLE `admins` (
+  `username` varchar(60) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cereals_t`
+-- Dumping data for table `admins`
 --
 
-INSERT INTO `cereals_t` (`id`, `name`, `quantity`, `price`, `image`) VALUES
-(1, 'Rice', '10', '50.00', 'gaf\\cereals\\\r\nrice.jpg'),
-(2, 'Maize', '20', '70.00', 'gaf\\cereals\\maize.jpg'),
-(3, 'Wheat', '25', '120.00', 'gaf\\cereals\\wheat.jpg'),
-(4, 'Guinea corn', '10', '50.00', 'gaf\\cereals\\guineacorn.jpg'),
-(5, 'Sorghum', '30', '100.00', 'gaf\\cereals\\sorghum.jpg'),
-(6, 'Millet', '50', '90.00', 'gaf\\cereals\\millet.jpg');
+INSERT INTO `admins` (`username`, `password`) VALUES
+('Admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -82,31 +74,6 @@ INSERT INTO `general_orders_t` (`id`, `Fullname`, `Rigion`, `Address`, `Tel`, `E
 -- --------------------------------------------------------
 
 --
--- Table structure for table `legumes_t`
---
-
-CREATE TABLE `legumes_t` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `quantity` varchar(30) DEFAULT NULL,
-  `price` decimal(18,2) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `legumes_t`
---
-
-INSERT INTO `legumes_t` (`id`, `name`, `quantity`, `price`, `image`) VALUES
-(1, 'Beans', '25', '150.00', 'gaf\\legumes\\beans1.jpg'),
-(2, 'Groundnut', '130', '70.00', 'gaf\\legumes\\groundnut1.jpg'),
-(3, 'Peas', '25', '120.00', 'gaf\\legumes\\peas1.jpg'),
-(4, 'Soybeans corn', '20', '50.00', 'gaf\\legumes\\soybeans1.jpg'),
-(5, 'Tamarind', '30', '100.00', 'gaf\\legumes\\tamarind1.jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `orders_t`
 --
 
@@ -126,7 +93,16 @@ CREATE TABLE `orders_t` (
 INSERT INTO `orders_t` (`id`, `customerId`, `name`, `quantity`, `unitPrice`, `totalPrice`) VALUES
 (1, 'rahim', 'Rice', '1', '50.00', '50.00'),
 (2, 'rahim', 'Maize', '1', '70.00', '70.00'),
-(3, 'rahim', 'Guinea corn', '22', '50.00', '1,100.00');
+(5, 'rahim123', 'Cocoyam', '13', '150.00', '1,950.00'),
+(6, 'rahim123', 'Carrot', '78', '70.00', '5,460.00'),
+(7, 'Gafaru', 'Cabbage', '12', '120.00', '1,440.00'),
+(8, 'Gafaru', 'Wheat', '16', '80.00', '1,280.00'),
+(9, 'Gafaru', 'Peas', '10', '189.00', '1,890.00'),
+(10, 'Gafaru', 'Cocoyam', '1', '150.00', '150.00'),
+(11, 'Gafaru', 'Peas', '10', '189.00', '1,890.00'),
+(12, 'Gafaru', 'Cocoyam', '1', '150.00', '150.00'),
+(13, 'Gafaru', 'Tomatoes', '15', '110.00', '1,650.00'),
+(14, 'Gafaru', 'Tomatoes', '15', '110.00', '1,650.00');
 
 -- --------------------------------------------------------
 
@@ -148,33 +124,27 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `type`, `quantity`, `price`, `image`) VALUES
-(2, 'q', 'cereal', '10', '20.00', 'Google-Street-View-moves-into-shops-1-800x485.jpg'),
-(3, 'hh', 'cereal', 'lkk', '90.00', 'Google-Street-View-moves-into-shops-1-800x485.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `roots_t`
---
-
-CREATE TABLE `roots_t` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `quantity` varchar(30) DEFAULT NULL,
-  `price` decimal(18,2) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `roots_t`
---
-
-INSERT INTO `roots_t` (`id`, `name`, `quantity`, `price`, `image`) VALUES
-(1, 'Casava', '50', '50.00', 'gaf\\Roots\\casava1.jpg'),
-(2, 'Cocoyam', '20', '70.00', 'gaf\\Roots\\cocoyam1.jpg'),
-(3, 'Radhies', '25', '120.00', 'gaf\\Roots\\radishes1.jpg'),
-(4, 'Sweet Potato', '10', '50.00', 'gaf\\Roots\\sweetpotato1.jpg'),
-(5, 'Yam', '30', '100.00', 'gaf\\Roots\\yam1.jpg');
+(1, 'Rice', 'cereal', '40', '120.00', 'rice.jpg'),
+(2, 'Maize', 'cereal', '30', '100.00', 'maize.jpg'),
+(3, 'Wheat', 'cereal', '28', '80.00', 'wheat.jpg'),
+(4, 'Guinea Corn', 'cereal', '68', '110.00', 'guineacorn.jpg'),
+(5, 'Sorghum', 'cereal', '78', '80.00', 'sorghum.jpg'),
+(6, 'Millet', 'cereal', '28', '160.00', 'millet.jpg'),
+(7, 'Beans', 'Legume', '200', '30.00', 'beans1.jpg'),
+(8, 'Groundnut', 'Legume', '100', '80.00', 'groundnut1.jpg'),
+(9, 'Peas', 'Legume', '100', '189.00', 'peas1.jpg'),
+(10, 'Soybeans', 'Legume', '25', '200.00', 'soybeans1.jpg'),
+(11, 'Tamarind', 'Legume', '180', '190.00', 'tamarind1.jpg'),
+(12, 'Cassava', 'tuber', '60', '120.00', 'casava1.jpg'),
+(13, 'Cocoyam', 'tuber', '90', '150.00', 'cocoyam1.jpg'),
+(14, 'Radishes', 'tuber', '70', '50.00', 'radishes1.jpg'),
+(15, 'Sweet Potato', 'tuber', '90', '100.00', 'sweetpotato1.jpg'),
+(16, 'Yam', 'tuber', '90', '101.00', 'yam1.jpg'),
+(17, 'Cabbage', 'vegetable', '60', '120.00', 'cabbage1.jpg'),
+(18, 'Carrot', 'vegetable', '50', '70.00', 'carrot1.jpg'),
+(19, 'Cucumber', 'vegetable', '60', '120.00', 'cucumber1.jpg'),
+(20, 'Tomatoes', 'vegetable', '80', '110.00', 'tomatoes1.jpg'),
+(21, 'Garlic', 'vegetable', '90', '190.00', 'garlic1.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,53 +168,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `fullName`, `region`, `telephone`, `gps`, `address`, `email`, `password`) VALUES
+('Gafaru', 'Gafaru Alhassan', 'NORTHERN', '0549041484', 'B-222-1233', 'Kakapayili 489, Tamale', 'gaf72@gmail.com', '$2y$10$oS/0HQpfmiUCPHP5mbSflulwbp8CZmUr1vLS7wOdkFxJNdZlsdBTC'),
+('rahim123', 'Zakaria Abdulrahim', 'Select', '0549041452', 'N123-332-222', 'Kak 489, Tamale', 'zakariaabdulrahim72@gmail.com', '$2y$10$ZD6iayMo/B6QNtw0uz62HO/mS/9kdGQZxV.XWaavUuZHF9B7pc8ta'),
 ('username', 'fullname', 'region', '+2229900020', 'somewhere', 'address', 'somebody@nobody.com', '$2y$10$cicmFt6Ug71g3ybD.Alv5OcoDuhE3fFkWBH/Q6LazQteud4eU4rC.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vegetables_t`
---
-
-CREATE TABLE `vegetables_t` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `quantity` varchar(30) DEFAULT NULL,
-  `price` decimal(18,2) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `vegetables_t`
---
-
-INSERT INTO `vegetables_t` (`id`, `name`, `quantity`, `price`, `image`) VALUES
-(1, 'Cabbage', '50', '50.00', 'gaf\\vegetables\\cabbage1.jpg'),
-(2, 'Carrot', '20', '70.00', 'gaf\\vegetables\\carrot1.jpg'),
-(3, 'Cucumber', '25', '120.00', 'gaf\\vegetables\\cucumber1.jpg'),
-(4, 'Tomatoes', '10', '50.00', 'gaf\\vegetables\\tomatoes1.jpg'),
-(5, 'Garlic', '30', '100.00', 'gaf\\vegetables\\garlic1.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cereals_t`
---
-ALTER TABLE `cereals_t`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `general_orders_t`
 --
 ALTER TABLE `general_orders_t`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `legumes_t`
---
-ALTER TABLE `legumes_t`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -260,32 +195,14 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roots_t`
---
-ALTER TABLE `roots_t`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `vegetables_t`
---
-ALTER TABLE `vegetables_t`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `cereals_t`
---
-ALTER TABLE `cereals_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `general_orders_t`
@@ -294,34 +211,16 @@ ALTER TABLE `general_orders_t`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `legumes_t`
---
-ALTER TABLE `legumes_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `orders_t`
 --
 ALTER TABLE `orders_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `roots_t`
---
-ALTER TABLE `roots_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `vegetables_t`
---
-ALTER TABLE `vegetables_t`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -24,7 +24,7 @@
                 <!-- site logo -->
                 <div class="col-md-6">
                     <div class="logo">
-                        <a href="index.php">zigri</a>
+                        <a href="admin/adminlogin.php">zigri</a>
                     </div>
                 </div>
 
@@ -51,6 +51,7 @@
                                     login
                                 </a>
                             </li>
+                          
                             <li>
                                 <a href="cart/signup.php">
                                     <i class="fa fa-users"></i>
@@ -59,7 +60,7 @@
                             </li>
                             <?php } else{ ?>
                                 <li>
-                                <a href="cart/logout.php">
+                                <a href="index.php">
                                     <i class="fa fa-users"></i>
                                     logout
                                 </a>
@@ -187,7 +188,8 @@
     </section>
 
     </div>
-
+   
+   
     <?php include_once 'footer.php' ; ?>
     
 

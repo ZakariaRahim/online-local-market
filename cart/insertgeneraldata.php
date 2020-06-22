@@ -26,8 +26,12 @@ if (isset($_GET["action"])) {
           $slq1=" INSERT INTO `general_orders_t`( `Fullname`, `Rigion`, `Address`, `Tel`, `Email`, `Gps`, `ProductName`, `quantity`, `unitPrice`, `totalPrice`) 
           VALUES('".$fullname."','".$region."','".$address."','".$tel."','".$email."','".$gps."','".$name."','".$qty."','".$price."','".$totalprice."') ";
        $data1=mysqli_query($connect,$slq1);
+       
           echo '<script>alert("Product Ordered Successfully")</script>';
-          echo '<script>window.location="generalcustomercart.php" </script>';
+          session_destroy();
+          session_unset();
+          
+          echo '<script>window.location="generalcustomer.php" </script>';
         }
       }
     }

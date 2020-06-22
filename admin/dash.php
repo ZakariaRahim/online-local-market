@@ -70,7 +70,7 @@ if($query)
             
             <div class="d_box col-md-4 mr-5 ml-5">
                 <i class="fa fa-carrot"></i>
-                <h4 id="vegetable">0</h4>
+                <h4 id="vegetable"><?= $vegetable ?></h4>
                 
                 <div class="d_foot">
                     <h5 class="f-veg">vegetables</h5>

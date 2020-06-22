@@ -88,10 +88,10 @@ if (isset($_POST['check'])) {
  
   <div class="row">
     <div class="col">
-      <input type="text" name="fname" class="form-control" placeholder="Fullname name" >
+      <input type="text" name="fname" class="form-control" placeholder="Fullname name" required >
     </div>
     <div class="col">
-      <input type="text" name="region" class="form-control" placeholder="Region">
+      <input type="text" name="region" class="form-control" placeholder="Region" required>
     </div>
     <div class="col">
       <input type="text" name="address" class="form-control" placeholder="House Address">

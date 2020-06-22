@@ -71,7 +71,7 @@ $cart_count = count(array_keys($_SESSION["cart"]));
   <form action="generalcustomercart.php" method="post" id="nameform">
         
         <input type="hidden" name="iqty" id="" class="form-control" value="1">
-        <input type="hidden" name="iname"  class="form-control" value="<?php echo $row["name"];?>">
+        <input type="hidden" name="iname"  class="form-control" style="margin-left:5%;" value="<?php echo $row["name"];?>">
         <input type="hidden" name="iprice"  class="form-control" value="<?php echo $row["price"];?>">
         <a href="generalcustomercart.php" form="nameform" name="proceed" class="pro"><i class="fas fa-cart-plus fa-4x">
         

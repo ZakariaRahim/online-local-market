@@ -39,7 +39,7 @@
                         <a href="add_product.php">Add products</a>
                     </li>
                     <li>
-                        <a href="customer.php">customer record</a>
+                        <a href="orders.php">Orders records</a>
                     </li>
                 </ul>
             </nav>

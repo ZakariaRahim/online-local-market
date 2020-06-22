@@ -1,10 +1,6 @@
 <?php 
-include 'connect.php';
+include_once "../admin/init.php";
 include 'headerfiles.php';
-//  we will be using the customer login id to get the session name of the customerid 
- $_SESSION["customerid"]="rahim";
-//  $cereals=$_SESSION['cereal'];
- 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +43,7 @@ include 'headerfiles.php';
        <td><?php  echo number_format($values["item_qty"]* $values["item_price"] ,2);?></td>
   
        <!-- we will be using user session id in order to get user name during login -->
-       <td><?php echo $_SESSION['customerid']?></td>
+       <td> <?= $_SESSION['user']['username'] ?? null; ?></td>
        <td> <a href="cereals.php?action=delete&id=<?php echo  $values["item_id"];?>"><span class="text-danger"><button type="submit" class="btn btn-danger">Remove</button><i class="fas fa-trash-alt"></i> </span></a></td>
         
         <td ><a href="insertdata.php?action=insert&id=<?php echo $values['item_id']; ?>"><button type="submit" class="btn btn-success">Order Now</button></a> </td>
@@ -68,9 +64,9 @@ include 'headerfiles.php';
   
   </table>
   
- <a href="cereals.php">
-  <input type="submit" value="Back To Cart" class="btn btn-secondary"></a>
+ <a href="legumescart.php" class="btn btn-secondary">BACK
 
+</a>
  
 
   </div>

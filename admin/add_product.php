@@ -107,6 +107,9 @@ if(isset($_POST['submit']))
                     <td>
                         <select name="type" id="type" required>
                             <option value="cereal" selected>Cereals</option>
+                            <option value="legume" selected>Legumes</option>
+                            <option value="tuber" selected>Roots and Tubers</option>
+                            <option value="vegetable" selected>Veegetables</option>
                         </select>
                     </td>
                 </tr>

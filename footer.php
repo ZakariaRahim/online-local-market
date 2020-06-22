@@ -1,4 +1,5 @@
 <footer>
+                       
     <p>
         <span>zigri</span> &copy; 
         <?php echo $date = date('Y-m-d'); ?> 

@@ -100,7 +100,7 @@ if (isset($_GET["action"])) {
             
           }
 
-          $query="SELECT * FROM `legumes_t`";
+          $query="SELECT * FROM products WHERE type = 'legume'";
           
             $result=mysqli_query($connect,$query);
     
@@ -115,7 +115,7 @@ if (isset($_GET["action"])) {
 
               <div class="col-md-4">
 
-                <img src="<?php echo $row["image"];?>" class="">
+                <img src="../admin/uploaded_images/<?php echo $row["image"];?>" class="">
 
                   <div class="p_info">
                     <h3><?php echo $row["name"];?></h3>

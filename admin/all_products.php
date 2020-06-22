@@ -13,7 +13,7 @@ $query = mysqli_query($connect, $sql);
 ?>
 
 
-<div class="dash_container">
+<div class="dash_container" style="margin-left:27%;margin-top:3.97%;">
     <?php 
     if($query){
 ?>
@@ -38,8 +38,8 @@ $query = mysqli_query($connect, $sql);
             <td><?= $price  ?></td>
             <td> <img src="<?= 'uploaded_images/'. $image ?>" alt="Product image" 
                         style="height: 100px; width:100px"> </td>
-            <td><a href="update_product.php?id=<?= $id ?>">Update</a></td>
-            <td><a href="delete_product.php?id=<?= $id ?>">Delete</a></td>
+            <td><a class="btn btn-info" href="update_product.php?id=<?= $id ?>">Update</a></td>
+            <td><a class="btn btn-danger"  href="delete_product.php?id=<?= $id ?>">Delete</a></td>
         </tr>
             <?php } ?>
     </table>

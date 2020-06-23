@@ -36,7 +36,7 @@ if($result = mysqli_query($connect, $sql)){
                 echo "<td>" . $row['quantity'] . "</td>";
                 echo "<td>" . $row['unitPrice'] . "</td>";
                 echo "<td>" . $row['totalPrice'] . "</td>";
-               echo ' <td><a class="btn btn-danger" href="delete_product.php?id=<?= $id ?>">Delete</a></td>';
+               echo ' <td><a class="btn btn-danger" href="delete_orders.php?id=<?= $id ?>">Delete</a></td>';
             echo "</tr>";
         }
         echo "</table>";

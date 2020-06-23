@@ -69,12 +69,12 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="../css/style.css">
 
 
-    <title>ZIGRI | USER SIGNUP</title>
+    <title>ZAGRI | USER SIGNUP</title>
 </head>
 <body>
     
     <div class="login_box">
-        <div class="title">zigri shop</div>
+        <div class="title">zagri shop</div>
         <form action="signup.php" method="post" class="form3">
         
         <?php if(!empty($errors)){ ?>
@@ -131,7 +131,7 @@ if(isset($_POST['submit']))
                     <input type="password" id="log_input" name="password" >
                 </div>
                 <div>
-                    <input type="submit" id="log_submit" value="login" name="submit">
+                    <input type="submit" id="log_submit" value="Signup" name="submit">
                 </div>
             </div>
         </form>

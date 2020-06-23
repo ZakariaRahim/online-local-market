@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
     // user validation
     // username and password field should not be blank
     if($username != '' && $password != ''){
-        
+
         
         // get the current user from database
         $sql = "SELECT * FROM users WHERE username = '$username'";

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>ZIGRI | HOME</title>
+    <title>ZAGRI | HOME</title>
 </head>
 <body>
     <div class="index-container">
@@ -24,7 +24,7 @@
                 <!-- site logo -->
                 <div class="col-md-6">
                     <div class="logo">
-                        <a href="admin/adminlogin.php">zigri</a>
+                        <a href="admin/adminlogin.php">zagri</a>
                     </div>
                 </div>
 
@@ -60,7 +60,8 @@
                             </li>
                             <?php } else{ ?>
                                 <li>
-                                <a href="index.php">
+                                <a href="cart/logout.php">
+                                  
                                     <i class="fa fa-users"></i>
                                     logout
                                 </a>
